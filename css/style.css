@@ -1,60 +1,92 @@
-@charset "UTF-8";
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.fundo {
-    background-image: linear-gradient(45deg, blue, purple);
-    height: 100vh;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
 .calculadora {
-    position: absolute;
-    background-color: #000000c9;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 320px;
+    max-width: 100%;
+    background: #1e1e2f;
+    padding: 25px;
     border-radius: 20px;
-    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.calculadora h2 {
+h1 {
+    color: white;
     text-align: center;
-    margin-bottom: 10px;
+    font-size: 25px;
+    margin-bottom: 20px;
 }
 
-.calculadora p {
-    background-color: #fff;
-    color: #000;
-    font-size: 20px;
-    text-align: right;
-    height: 50px;
-    margin: 3px;
-    padding: 15px;
-    border-radius: 50px;
-}
-
-table {
-    margin: 0 auto;
-}
-
-table button {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #383838;
-    color: #fff;
+#tela {
+    width: 100%;
+    height: 65px;
+    margin-bottom: 20px;
+    padding: 10px;
     border: none;
-    margin: 3px;
-    border-radius: 50px;
+    border-radius: 10px;
+    background: #11111b;
+    color: white;
+    text-align: right;
+    font-size: 30px;
 }
 
-table button:hover {
-    background-color: #000000;
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 55px;
+    border: none;
+    border-radius: 12px;
+    background: #33334d;
+    color: white;
+    font-size: 21px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #4a4a6a;
+    transform: scale(1.04);
+}
+
+.operador {
+    background: #ff9500;
+}
+
+.operador:hover {
+    background: #e68600;
+}
+
+.especial {
+    background: #606078;
+}
+
+.igual {
+    background: #22a06b;
+    grid-row: span 2;
+    height: auto;
+}
+
+.igual:hover {
+    background: #188653;
+}
+
+.zero {
+    grid-column: span 2;
 }

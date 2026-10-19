@@ -1,49 +1,44 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cauculadora</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <title>Calculadora Básica</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="fundo">
-        <div class="calculadora">
-            <h2>Calculadora</h2>
-            <p id="res"></p>
-            <table>
-                <tr>
-                    <td><button onclick="limpar()">C</button></td>
-                    <td><button onclick="apagar()"><</button></td>
-                    <td><button onclick="insert('/')">/</button></td>
-                    <td><button onclick="insert('*')">x</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="insert('7')">7</button></td>
-                    <td><button onclick="insert('8')">8</button></td>
-                    <td><button onclick="insert('9')">9</button></td>
-                    <td><button onclick="insert('-')">-</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="insert('4')">4</button></td>
-                    <td><button onclick="insert('5')">5</button></td>
-                    <td><button onclick="insert('6')">6</button></td>
-                    <td><button onclick="insert('+')">+</button></td>
-                </tr>
-                <tr>
-                    <td><button onclick="insert('1')">1</button></td>
-                    <td><button onclick="insert('2')">2</button></td>
-                    <td><button onclick="insert('3')">3</button></td>
-                    <td rowspan="2"><button onclick="calcular()" style="height: 106px;">=</button></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><button onclick="insert('0')" style="width: 106px;">0</button></td>
-                    <td><button onclick="insert('.')">.</button></td>
-                </tr>
-            </table>
+
+    <div class="calculadora">
+        <h1>Calculadora</h1>
+
+        <input type="text" id="tela" value="0" readonly>
+
+        <div class="botoes">
+            <button class="especial" onclick="limpar()">C</button>
+            <button class="especial" onclick="apagar()">⌫</button>
+            <button class="operador" onclick="adicionar('/')">÷</button>
+            <button class="operador" onclick="adicionar('*')">×</button>
+
+            <button onclick="adicionar('7')">7</button>
+            <button onclick="adicionar('8')">8</button>
+            <button onclick="adicionar('9')">9</button>
+            <button class="operador" onclick="adicionar('-')">−</button>
+
+            <button onclick="adicionar('4')">4</button>
+            <button onclick="adicionar('5')">5</button>
+            <button onclick="adicionar('6')">6</button>
+            <button class="operador" onclick="adicionar('+')">+</button>
+
+            <button onclick="adicionar('1')">1</button>
+            <button onclick="adicionar('2')">2</button>
+            <button onclick="adicionar('3')">3</button>
+            <button class="igual" onclick="calcular()">=</button>
+
+            <button class="zero" onclick="adicionar('0')">0</button>
+            <button onclick="adicionar('.')">.</button>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
